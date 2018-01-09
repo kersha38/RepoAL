@@ -4,7 +4,8 @@ import probaMySQL as sql
 
 i = 0
 
-def cargartabla():
+def cargartabla(campo,valor):
+    print 'Argumentos: ',campo,valor
     def addrow(arr, n):
         global i
         for j in range(n):

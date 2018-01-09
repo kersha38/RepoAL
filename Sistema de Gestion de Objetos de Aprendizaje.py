@@ -4,13 +4,15 @@ import tabla as tb
 import intCargar
 
 
-#ventana de funcion buscar
-def Buscar():
-    tb.cargartabla()
-    #tb.addrow()
-
 #ventana terciaria
 def abrirBusqueda():
+
+    # ventana de funcion buscar
+    def Buscar():
+        titu=['o.titulo','u.nombre','o.FECHA_CREACION','o.PALABRAS_CLAVE']
+        tb.cargartabla(titu[lstCamoo.curselection()[0]],campo_text.get())
+        # tb.addrow()
+
     ventaBus=tk.Tk()
     ventaBus.geometry("500x500+200+200")
     ventaBus.title("Busqueda")
@@ -21,10 +23,11 @@ def abrirBusqueda():
     lstCamoo.insert(2, "Fecha de creacion")
     lstCamoo.insert(3, "Palabra clave")
     lstCamoo.place(x=20, y=70)
-    boton = tk.Button(ventaBus, text="Buscar", command=Buscar).place(x=200,y=50)
-    boton.pack()
+    botonB=tk.Button(ventaBus, text="Buscar", command=Buscar)
+    botonB.place(x=200,y=50)
+    botonB.pack()
     campo_text = tk.Entry(ventaBus)
-    campo_text.pack(file=tk.X)
+    campo_text.pack()
     campo_text.get()
 
 
