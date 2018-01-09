@@ -1,6 +1,7 @@
+#import probaMySQL as msql
 import Tkinter as tk
 import tabla as tb
-#import probaMySQL as msql
+
 
 #ventana de funcion buscar
 def Buscar():
@@ -21,6 +22,10 @@ def abrirBusqueda():
     lstCamoo.place(x=20, y=70)
     boton = tk.Button(ventaBus, text="Buscar", command=Buscar).place(x=200,y=50)
     boton.pack()
+    campo_text = tk.Entry(ventaBus)
+    campo_text.pack(file=tk.X)
+    campo_text.get()
+
 
 
 #ventana secundaria

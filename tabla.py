@@ -5,7 +5,7 @@ import probaMySQL as sql
 
 i=0
 #ventana principal
-venta=Tk()
+venta=tk.Tk()
 venta.geometry("1200x500+0+0")
 venta.title("Tabla de resultados")
 
