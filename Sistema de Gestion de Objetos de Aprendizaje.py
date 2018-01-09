@@ -1,11 +1,12 @@
 #import probaMySQL as msql
 import Tkinter as tk
 import tabla as tb
+import intCargar
 
 
 #ventana de funcion buscar
 def Buscar():
-    tb.busqueda()
+    tb.cargartabla()
     #tb.addrow()
 
 #ventana terciaria
@@ -35,7 +36,7 @@ def abrirVentana():
     ventAV.title("Opciones")
     lblOpciones=tk.Label(ventAV,text="Escoger una opcion").place(x=50,y=50)
     select=tk.IntVar()
-    rdBOP=tk.Radiobutton(ventAV, text="Importar y catalogar OA", value=1,variable=select).place(x=50,y=100)
+    rdBOP=tk.Radiobutton(ventAV, text="Importar y catalogar OA",command=intCargar.cargar,value=1,variable=select).place(x=50,y=100)
     rdBOP = tk.Radiobutton(ventAV, text="Busqueda de OA", value=2,variable=select,command=abrirBusqueda).place(x=50, y=150)
     ventAV.mainloop()
 

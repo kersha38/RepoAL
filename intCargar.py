@@ -54,6 +54,7 @@ def cargar():
 
     ventana = tk.Toplevel()
     ventana.title("Subir Nuevo OA")
+
     # formato ventana
     ventana.geometry('250x300')
     ventana.configure(background='dark turquoise')
@@ -101,7 +102,6 @@ def cargar():
     btnSalir.pack(side=tk.RIGHT)
 
     #ventana.mainloop()
-
 
 """
 self.some_list = [ 'ADDRESS BOOK' ] 
