@@ -1,8 +1,24 @@
-#import probaMySQL as msql
+import probaMySQL as msql
+from Tkinter import *
+import ttk
 import Tkinter as tk
 import tabla as tb
 import intCargar
 import login
+
+def cargarPalabrasClave():
+    query = "select palabras_clave from objeto_aprendijzaje"
+    resulCombo=[]
+    resultado = msql.run_query(query)
+    for tupla in resultado:
+        try:
+            aux=tupla[0].split(",")
+            for pk in aux:
+                resulCombo.append(pk)
+        except:
+            continue
+    print resulCombo
+    return resulCombo
 
 #ventana terciaria
 def abrirBusqueda():
@@ -17,18 +33,28 @@ def abrirBusqueda():
     ventaBus.geometry("500x500+200+200")
     ventaBus.title("Busqueda")
     lblcampo = tk.Label(ventaBus, text="Escoger campo").place(x=20, y=50)
-    lstCamoo = tk.Listbox(ventaBus, width=20)
+    lstCamoo = tk.Listbox(ventaBus, state='normal')
     lstCamoo.insert(0, "Titulo")
     lstCamoo.insert(1, "Autor")
     lstCamoo.insert(2, "Fecha de creacion")
     lstCamoo.insert(3, "Palabra clave")
     lstCamoo.place(x=20, y=70)
+    combo = ttk.Combobox(ventaBus, state='normal' )
+    combo.place(x=20, y=135)
+    combo["values"]=cargarPalabrasClave()
+    combo.bind("<<ComboboxSelected>>",)
+    #(["software", "licencias", "libertades de software", "disenio de arquitectura"])
+
+
+
     botonB=tk.Button(ventaBus, text="Buscar", command=Buscar)
     botonB.place(x=200,y=50)
     botonB.pack()
     campo_text = tk.Entry(ventaBus)
     campo_text.pack()
     campo_text.get()
+
+
 
 
 

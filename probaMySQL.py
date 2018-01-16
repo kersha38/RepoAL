@@ -3,7 +3,7 @@ import MySQLdb
 
 DB_HOST = 'localhost'
 DB_USER = 'root'
-DB_PASS = 'mysql'
+DB_PASS = 'root'
 DB_NAME = 'baselibres'
 
 
@@ -27,3 +27,4 @@ def run_query(query=''):
     conn.close()  # Cerrar la conexión
 
     return data
+
