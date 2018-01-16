@@ -25,6 +25,8 @@ def cargartabla(campo,valor):
         print(resultado)
         return resultado
 
+
+
     def borrar():
         # criterio = Raw_input("Ingrese criterio para eliminar: ")
         title=eg.enterbox(msg='Ingrese titulo', title='Borrar')
