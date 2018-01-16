@@ -41,6 +41,7 @@ def abrirBusqueda():
     combo = ttk.Combobox(ventaBus, state='normal' )
     combo.place(x=20, y=135)
     combo["values"]=cargarPalabrasClave()
+    combo.bind("<<ComboboxSelected>>",)
     #(["software", "licencias", "libertades de software", "disenio de arquitectura"])
 
 
