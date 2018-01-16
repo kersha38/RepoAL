@@ -39,7 +39,7 @@ def cargar():
         titulo=eNombre.get()
         institucion=eInsti.get()
         descrip=eDescrip.get()
-        ruta=archivo
+        ruta=repr(archivo)
         fechaC=repr(fecha['year_selected'])+'/'+repr(fecha['month_selected'])+'/'+repr(fecha['day_selected'])
         pClave=eClave.get()
         print nombreA,titulo,institucion,descrip,ruta,fechaC,pClave

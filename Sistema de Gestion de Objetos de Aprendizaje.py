@@ -26,7 +26,12 @@ def abrirBusqueda():
     # ventana de funcion buscar
     def Buscar():
         titu=['o.titulo','u.nombre','o.FECHA_CREACION','o.PALABRAS_CLAVE']
-        tb.cargartabla(titu[lstCamoo.curselection()[0]],campo_text.get())
+        t=''
+        try:
+            t=titu[lstCamoo.curselection()[0]]
+        except:
+            t=''
+        tb.cargartabla(t,campo_text.get())
         # tb.addrow()
 
     ventaBus=tk.Tk()
@@ -44,8 +49,6 @@ def abrirBusqueda():
     combo["values"]=cargarPalabrasClave()
     combo.bind("<<ComboboxSelected>>",)
     #(["software", "licencias", "libertades de software", "disenio de arquitectura"])
-
-
 
     botonB=tk.Button(ventaBus, text="Buscar", command=Buscar)
     botonB.place(x=200,y=50)

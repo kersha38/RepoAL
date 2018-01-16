@@ -6,7 +6,7 @@ import os
 
 i = 0
 
-def cargartabla(campo,valor):
+def cargartabla(campo='',valor=''):
     print 'Argumentos: ',campo,valor
     def addrow(arr, n):
         global i
@@ -18,7 +18,9 @@ def cargartabla(campo,valor):
 
     def busqueda():
         # criterio=Raw_input("Ingrese criterio de busqueda")
-        query = "Select o.titulo, o.DESCRIPCION,u.nombre,u.INSTITUCION,o.FECHA_CREACION,o.PALABRAS_CLAVE from objeto_aprendijzaje o, usuario u where o.ID_U=u.ID_U and "+\
+        query="Select o.titulo, o.DESCRIPCION,u.nombre,u.INSTITUCION,o.FECHA_CREACION,o.PALABRAS_CLAVE from objeto_aprendijzaje o, usuario u where o.ID_U=u.ID_U "
+        if not (campo=='' or  valor==''):
+            query += "and "+\
                 campo+" like '"+valor+"';"
         print query
         resultado = sql.run_query(query)
