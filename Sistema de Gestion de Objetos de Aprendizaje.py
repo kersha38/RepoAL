@@ -2,7 +2,7 @@
 import Tkinter as tk
 import tabla as tb
 import intCargar
-
+import login
 
 #ventana terciaria
 def abrirBusqueda():
@@ -43,13 +43,18 @@ def abrirVentana():
     rdBOP = tk.Radiobutton(ventAV, text="Busqueda de OA", value=2,variable=select,command=abrirBusqueda).place(x=50, y=150)
     ventAV.mainloop()
 
-#ventan contenedora global
+# login
+continuar=login.runLogin()
+if continuar is False:
+    exit()
+
+# ventan contenedora global
 ventana=tk.Tk()
 ventana.geometry("700x500+0+0")
 ventana.title("Sistema de Gestion de Objetos de Aprendizaje")
 ventana.configure(background="grey")
 
-#crear el  menu
+# crear el  menu
 barraMenu=tk.Menu(ventana)
 mnuMenu=tk.Menu(barraMenu)
 mnuMenu.add_command(label= "Crear Objeto de Aprendizaje")
