@@ -91,4 +91,6 @@ mnuMenu.add_command(label= "Repositorio Objeto de Aprendizaje",command=abrirVent
 mnuMenu.add_command(label= "Salir",command=ventana.destroy)
 barraMenu.add_cascade(label= "Menu" ,menu=mnuMenu)
 ventana.config(menu=barraMenu)
+imagen = PhotoImage(file = "oa1.gif")
+lblImagen=Label(ventana, image=imagen).place(x=300,y=50)
 ventana.mainloop()
