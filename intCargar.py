@@ -5,8 +5,6 @@ import probaMySQL
 import easygui as eg
 import wCalendar
 
-
-
 def cargar():
     fecha = {}
     archivo = ''
@@ -56,49 +54,49 @@ def cargar():
     ventana.title("Subir Nuevo OA")
 
     # formato ventana
-    ventana.geometry('250x300')
-    ventana.configure(background='dark turquoise')
-
-    etiqueta1 = tk.Label(ventana, text="Nombre", bg="blue", fg="white")
+    ventana.geometry('400x400')
+    ventana.configure(background='#38EB5C')
+    #dark turquoise
+    etiqueta1 = tk.Label(ventana, text="Nombre", bg="cyan", fg="black")
     etiqueta1.pack(fill=tk.X)
 
     eNombre = tk.Entry(ventana)
     eNombre.pack(fill=tk.X)
 
-    etiqueta2 = tk.Label(ventana, text="Descripción", bg="blue", fg="white")
+    etiqueta2 = tk.Label(ventana, text="Descripción", bg="cyan", fg="black")
     etiqueta2.pack(fill=tk.X)
 
     eDescrip = tk.Entry(ventana)
     eDescrip.pack(fill=tk.X)
 
-    etiqueta3 = tk.Label(ventana, text="Autor", bg="blue", fg="white")
+    etiqueta3 = tk.Label(ventana, text="Autor", bg="cyan", fg="black")
     etiqueta3.pack(fill=tk.X)
 
     eAutor = tk.Entry(ventana)
     eAutor.pack(fill=tk.X)
 
-    etiqueta5 = tk.Label(ventana, text="Institucion", bg="blue", fg="white")
+    etiqueta5 = tk.Label(ventana, text="Institucion", bg="cyan", fg="black")
     etiqueta5.pack(fill=tk.X)
 
     eInsti = tk.Entry(ventana)
     eInsti.pack(fill=tk.X)
 
-    btnFecha=tk.Button(ventana, text="Fecha Creacion", fg="blue", command=obFecha)
+    btnFecha=tk.Button(ventana, text="Fecha Creacion", fg="black", command=obFecha)
     btnFecha.pack()
 
-    etiqueta4 = tk.Label(ventana, text="palabras clave", bg="blue", fg="white")
+    etiqueta4 = tk.Label(ventana, text="palabras clave", bg="cyan", fg="black")
     etiqueta4.pack(fill=tk.X)
 
     eClave = tk.Entry(ventana)
     eClave.pack(fill=tk.X)
 
-    btnarchivo= tk.Button(ventana, text="seleccionar archivo", fg="blue", command=obtenDir)
+    btnarchivo= tk.Button(ventana, text="seleccionar archivo", fg="black", command=obtenDir)
     btnarchivo.pack()
 
-    btnGuardar = tk.Button(ventana, text="subir", fg="blue", command=hola)
+    btnGuardar = tk.Button(ventana, text="subir", fg="black", command=hola)
     btnGuardar.pack(side=tk.LEFT)
 
-    btnSalir = tk.Button(ventana, text="cancelar", fg="blue", command=salir)
+    btnSalir = tk.Button(ventana, text="cancelar", fg="black", command=salir)
     btnSalir.pack(side=tk.RIGHT)
 
     #ventana.mainloop()
