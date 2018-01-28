@@ -6,6 +6,7 @@ def runLogin():
     campos = ['Nombre', 'Password']
     salida = eg.multpasswordbox(msg='Bienvenido al CatalagoOA', title='Login'
                                 , fields=campos)
+
     print salida[0]
 
     # busco en la base de datos
