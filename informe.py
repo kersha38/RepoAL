@@ -1,31 +1,42 @@
 # -*- coding: utf-8 -*-
 import Tkinter as tk
-import easygui as eg
-import probaMySQL
+import probaMySQL as ms
 import ttk
-import login
+import wCalendar
 
-ventaInfor= tk.Tk()
-ventaInfor.geometry("500x250")
-ventaInfor.title("Registrarse")
-ventaInfor.configure(background="CadetBlue")
 
-nombreLbl=tk.Label(ventaInfor, text="Nombre").place(x=10,y=10)
-nombreEnt=tk.Entry(ventaInfor).place(x=70,y=10)
+def run():
+    fecha = {}
 
-apellidoLbl=tk.Label(ventaInfor, text="Apellido").place(x=230,y=10)
-apellidoEnt=tk.Entry(ventaInfor).place(x=290,y=10)
+    def registrar():
+        ms.run_query('Insert into usuario')
+        ventaInfor.destroy()
 
-contraseLbl=tk.Label(ventaInfor, text="Contrasenia").place(x=10,y=40)
-contraseEnt=tk.Entry(ventaInfor).place(x=90,y=40)
+    def obFecha():
+        child = tk.Toplevel()
+        calendario = wCalendar.Calendar(child, fecha)
 
-fechaNaciLabl=tk.Label(ventaInfor, text="Fecha de nacimiento").place(x=230,y=40)
-fechaNaciEnt=tk.Entry(ventaInfor).place(x=360,y=40)
+    ventaInfor = tk.Tk()
+    ventaInfor.geometry("500x250")
+    ventaInfor.title("Registrarse")
+    ventaInfor.configure(background="CadetBlue")
 
-tipoUsuarioLbl=tk.Label(ventaInfor,text="Tipo").place(x=10,y=70)
-tipoCombo=ttk.Combobox(ventaInfor)
-tipoCombo.place(x=70, y=70)
-tipoCombo["values"] = ["Administrador", "Profesor", "Estudiante"]
+    nombreLbl = tk.Label(ventaInfor, text="Nombre").place(x=10, y=10)
+    nombreEnt = tk.Entry(ventaInfor).place(x=70, y=10)
 
-registrarButton=tk.Button(ventaInfor, text="Terminado", command=login).place(x=300,y=150)
-ventaInfor.mainloop()
+    apellidoLbl = tk.Label(ventaInfor, text="Apellido").place(x=230, y=10)
+    apellidoEnt = tk.Entry(ventaInfor).place(x=290, y=10)
+
+    contraseLbl = tk.Label(ventaInfor, text="Clave de acceso").place(x=10, y=40)
+    contraseEnt = tk.Entry(ventaInfor,show='*').place(x=90, y=40)
+
+    btnFecha = tk.Button(ventaInfor, text="Fecha Nacimineto", fg="black", command=obFecha).place(x=360, y=40)
+    #fechaNaciEnt = tk.Entry(ventaInfor).place(x=360, y=40)
+
+    tipoUsuarioLbl = tk.Label(ventaInfor, text="Tipo").place(x=10, y=70)
+    tipoCombo = ttk.Combobox(ventaInfor)
+    tipoCombo.place(x=70, y=70)
+    tipoCombo["values"] = ["Administrador", "Profesor", "Estudiante"]
+
+    registrarButton = tk.Button(ventaInfor, text="Registrar", command=registrar).place(x=300, y=150)
+    ventaInfor.mainloop()
