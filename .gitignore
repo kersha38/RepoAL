@@ -101,7 +101,10 @@ ENV/
 .mypy_cache/
 *.elp
 
-.idea/*
+.idea/
+
 .idea/misc.xml
+
 .idea/RepoAL.iml
+
 .idea/workspace.xml
