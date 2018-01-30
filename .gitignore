@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+probaMySQL.py
 
 # C extensions
 *.so
