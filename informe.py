@@ -9,7 +9,12 @@ def run():
     fecha = {}
 
     def registrar():
-        ms.run_query('Insert into usuario')
+        ms.run_query('insert into usuario(nombre,clave,tipo,FechaNaci) values(\"'+nombreEnt.get()+''+apellidoEnt.get()+'\",'
+                     +'\"'+contraseEnt.get()+'\",'
+                     + '\"' + contraseEnt.get() + '\",'
+                     + '\"' + tipoCombo.get() + '\",'
+                     + '\"' + repr(fecha['year_selected'])+'/'+repr(fecha['month_selected'])+'/'+repr(fecha['day_selected'])
+                     +')')
         ventaInfor.destroy()
 
     def obFecha():
